@@ -6,16 +6,15 @@ namespace Pattern\Adapter;
  *
  * @package App\Adapter
  */
-interface PrintInterface
+abstract class Printer
 {
     /**
      * printWeek
      */
-    public function printWeak();
+    abstract public function printWeak();
 
     /**
      * printString
      */
-    public function printStrong();
-} // End interface Print
-
+    abstract public function printStrong();
+}

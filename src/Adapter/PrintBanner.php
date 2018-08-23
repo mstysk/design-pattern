@@ -1,20 +1,34 @@
 <?php
 namespace Pattern\Adapter;
 
-class PrintBanner extends Banner implements PrintInterface
+class PrintBanner extends Printer
 {
+    /** @var Banner **/
+    private $banner;
+
+    /**
+     * Constructor
+     *
+     * @param string $string
+     */
     public function __construct($string)
     {
-        parent::__construct($string);
-    }
+        $this->banner = new Banner($string);
+    } // End function Constructor
 
+    /**
+     * printWeak
+     */
     public function printWeak()
     {
-        $this->showWithParen();
-    }
+        $this->banner->showWithParen();
+    } // End function printWeak
 
+    /**
+     * printStrong
+     */
     public function printStrong()
     {
-        $this->showWithAster();
-    }
+        $this->banner->showWithAster();
+    } // End function printStrong
 }
